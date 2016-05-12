@@ -1,4 +1,7 @@
 var app = require('./server/server');
 
-app.listen(3000);
-console.log('on port 3000');
+app.set('port', 3000);
+
+app.listen(app.get('port'), function() {
+  console.log('Listening on port 3000');
+})

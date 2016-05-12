@@ -43,7 +43,6 @@ lionRouter.post('/', updateId, function(req, res) {
 lionRouter.delete('/:id', function(req, res) {
   var lion = _.findIndex(lions, {id: req.params.id});
   lions.splice(lion, 1);
-
   res.json(req.lion);
 });
 
