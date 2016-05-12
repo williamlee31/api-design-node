@@ -88,6 +88,20 @@ describe('[LIONS]', function(){
       })
   });
 
+  it('should get one lion', function(done) {
+    request(app)
+      .get('/lions/' + '1')
+      .set('Accept', 'application/json')
+      .expect('Content-Type', /json/)
+      .expect(201)
+      .end(function(err, resp) {
+        var test = resp.body;
+        expect(test.name).to.eql('Mufasa');
+        expect(test.age).to.eql(5);
+        done();
+      })
+  });
+
 });
 
 
