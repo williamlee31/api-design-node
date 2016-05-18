@@ -26,6 +26,14 @@ exports.get = function(req, res, next) {
 
 exports.getOne = function(req, res, next) {
   // fix me
+  User.findById({req.user})
+    .then(function(user){
+      if(!user){
+        next(new Error('No user with that id'));
+      } else {
+        
+      }
+    })
 };
 
 exports.put = function(req, res, next) {
